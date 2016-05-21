@@ -246,6 +246,14 @@ body {
     position: fixed;
     bottom: 0;
   }
+
+  @media (max-height: 400px) {
+
+  .mastfoot {
+    position: static;
+    width: 100%;
+  }
+}
   /* Start the vertical centering */
   .site-wrapper-inner {
     vertical-align: middle;
