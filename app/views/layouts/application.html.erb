@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todolist</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Get it done.</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
+    <div class="site-wrapper">
 
-<%= yield %>
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header" style="padding:15px; border:0 ">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <!--<%= simple_form_for Task.new do |f| %>-->
+                <div class="modal-body" style="padding: 0 15px;">
+                    <%= f.input :item, label:'What will you do?' %>
+                    <br>
+                </div>
+                <div class="modal-footer" style="padding: 30px 15px 15px; border:0">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <%= f.submit 'Submit', class:'btn btn-create' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="inner cover">
+            <div class="container">
+              <% if flash[:error].present? %>
+                <div class="col-xs-12 alert alert-danger">
+                  <%= flash[:error].html_safe %>
+                </div>
+              <% end %>
+              <h1 class="animated fadeIn"><%= link_to root_path do %>What will you accomplish?<% end %></h1>
+              <br>
+              <%= yield %>
+            </div>
+          </div>
+          <footer class="mastfoot">
+            <div class="inner">
+                <div class="col-xs-12 col-sm-12">
+                  <p>
+                  What else?
+                  <%= link_to 'What else?', '#', data: {toggle: 'modal', target: '#myModal'} %></p>
+                </div>
+              </div>
+            </div>
+          </footer>
+
+        </div>
+
+      </div>
+
+    </div>
 
 </body>
 </html>
