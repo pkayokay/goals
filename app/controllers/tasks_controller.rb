@@ -5,9 +5,9 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.create(task_params)
-    if @task.invalid?
-      flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
-    end
+    #if @task.invalid?
+      #flash[:error] = 'Try again.'
+    #end
     redirect_to root_path
   end
 

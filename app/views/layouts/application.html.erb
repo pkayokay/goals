@@ -23,7 +23,7 @@
                 <div class="modal-header" style="padding:15px; border:0 ">
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
-                <!--<%= simple_form_for Task.new do |f| %>-->
+                <%= simple_form_for Task.new do |f| %>
                 <div class="modal-body" style="padding: 0 15px;">
                     <%= f.input :item, label:'What will you do?' %>
                     <br>
@@ -53,8 +53,8 @@
             <div class="inner">
                 <div class="col-xs-12 col-sm-12">
                   <p>
-                  What else?
                   <%= link_to 'What else?', '#', data: {toggle: 'modal', target: '#myModal'} %></p>
+
                 </div>
               </div>
             </div>
