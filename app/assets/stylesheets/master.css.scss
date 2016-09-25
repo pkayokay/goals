@@ -17,6 +17,12 @@ html {
   min-height: 100%;
 }
 
+.modal-dialog {
+    position: relative;
+    margin: 40px auto;
+    max-width: 400px;
+}
+
 body {
   font-family: "Helvetica Neue";
 }
